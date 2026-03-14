@@ -5,7 +5,6 @@ from uuid import UUID
 
 from app.modules.schools.models import SchoolRequest, School
 
-
 class SchoolRepository:
 
     async def create_request(self, db: AsyncSession, req: SchoolRequest):
@@ -42,3 +41,4 @@ class SchoolRepository:
             updated_at=func.now()
         )
         db.add(school)
+        return school
